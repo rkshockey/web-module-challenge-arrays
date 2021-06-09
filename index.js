@@ -208,7 +208,7 @@ function getAverageWordLength(array){
     }
     return total / array.length
 }
-console.log(getAverageWordLength(originalFlavors))
+//console.log(getAverageWordLength(originalFlavors))
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
@@ -225,15 +225,24 @@ Use the getRandomFlavors function and new arrays below to do the following:
 
 
 function getRandomFlavors(array1, array2, array3, array4){
-    const metaArray = [array1, array2, array3, array4];
     const randomFlavors = [];
+    let randomArr = 0
     for(let i = 0; i < 31; i++){
-        randomArray = metaArray[Math.floor(Math.random() * 4)]
-        randomFlavors.push(randomArray[Math.floor(Math.random() * randomArray.length)]);
+        randomArr = Math.ceil(Math.random());
+        if (randomArr === 1){
+            randomFlavors.push(array1[Math.floor(Math.random() * array1.length)]);
+        } else if (randomArr === 2){
+            randomFlavors.push(array2[Math.floor(Math.random() * array2.length)]);
+        } else if (randomArr === 3){
+            randomFlavors.push(array3[Math.floor(Math.random() * array3.length)]);
+        } else if (randomArr === 4){
+            randomFlavors.push(array4[Math.floor(Math.random() * array4.length)]);
+        }
+        
     }
-    return randomFlavors
+    return randomFlavors;
 }
-//console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
+console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
