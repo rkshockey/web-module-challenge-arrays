@@ -45,8 +45,9 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
+function copy(array){
+    let newArr = [...array];
+    return newArr;
 }    
 
 
@@ -64,10 +65,14 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(array){
+   if (array.length === 31){
+       return TRUE
+   }else{
+       return FALSE
+   }
 }
-
+console.log("task 2", is31Flavors(originalFlavors))
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -160,9 +165,16 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(array, string){
+    const newArr = []
+    for(let i = 0; i < array.length; i++){
+        if(array[i].includes(string)){
+            newArr.push(array[i])
+        }
+    }
+    return newArr
 }
+//console.log("task 7", filterByWord(originalFlavors, "Chocolate"))
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
