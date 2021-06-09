@@ -223,26 +223,26 @@ Use the getRandomFlavors function and new arrays below to do the following:
     For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-
-function getRandomFlavors(array1, array2, array3, array4){
-    const randomFlavors = [];
-    let randomArr = 0
-    for(let i = 0; i < 31; i++){
-        randomArr = Math.ceil(Math.random());
-        if (randomArr === 1){
-            randomFlavors.push(array1[Math.floor(Math.random() * array1.length)]);
-        } else if (randomArr === 2){
-            randomFlavors.push(array2[Math.floor(Math.random() * array2.length)]);
-        } else if (randomArr === 3){
-            randomFlavors.push(array3[Math.floor(Math.random() * array3.length)]);
-        } else if (randomArr === 4){
-            randomFlavors.push(array4[Math.floor(Math.random() * array4.length)]);
-        }
+// MOVED FUNCTION BELOW NEW ARRAYS
+// function getRandomFlavors(array1, array2, array3, array4){
+//     const randomFlavors = [];
+//     let randomArr = 0;
+//     for(let i = 0; i < 31; i++){
+//         randomArr = Math.random();
+//         if (randomArr < 0.25){
+//             randomFlavors.push(array1[Math.floor(Math.random() * array1.length)]);
+//         }else if (randomArr < 0.5){
+//             randomFlavors.push(array2[Math.floor(Math.random() * array2.length)]);
+//         }else if (randomArr < 0.75){
+//             randomFlavors.push(array3[Math.floor(Math.random() * array3.length)]);
+//         }else{
+//             randomFlavors.push(array4[Math.floor(Math.random() * array4.length)]);
+//         }
         
-    }
-    return randomFlavors;
-}
-console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
+//     }
+//     return randomFlavors;
+// }
+//console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
@@ -324,6 +324,26 @@ const regionalFlavors = [
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"
 ]
+function getRandomFlavors(array1, array2, array3, array4){
+    const randomFlavors = [];
+    let randomArr = 0;
+    for(let i = 0; i < 31; i++){
+        randomArr = Math.random();
+        if (randomArr < 0.25){
+            randomFlavors.push(array1[Math.floor(Math.random() * array1.length)]);
+        }else if (randomArr < 0.5){
+            randomFlavors.push(array2[Math.floor(Math.random() * array2.length)]);
+        }else if (randomArr < 0.75){
+            randomFlavors.push(array3[Math.floor(Math.random() * array3.length)]);
+        }else{
+            randomFlavors.push(array4[Math.floor(Math.random() * array4.length)]);
+        }
+        
+    }
+    return randomFlavors;
+}
+console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
+
 
 
 
